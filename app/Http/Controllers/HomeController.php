@@ -1,19 +1,18 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller 
+class HomeController extends Controller
 {
-    public function index() 
+    public function index()
     {
         $viewData = [];
 
         $viewData['title'] = "Home Page - Online Store";
         return view("home.index")->with("viewData", $viewData);
     }
-
     public function about()
     {
         $viewData = [];
@@ -21,9 +20,9 @@ class HomeController extends Controller
         $viewData['subtitle'] = "About us";
         $viewData['description'] = "This is an about page ...";
         $viewData['author'] = "Developed by: Destiny";
-        //the with() method will return the particular data 
-        //we want to pass to the view 
-        //in this case we are returning it as an array . 
-        return view('home.about')->with('viewData',$viewData);
+        //the with() method will return the particular data
+        //we want to pass to the view
+        //in this case we are returning it as an array .
+        return view('home.about')->with('viewData', $viewData);
     }
 }

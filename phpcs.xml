@@ -1,0 +1,10 @@
+
+<ruleset name="php_codesniffer"> 
+    <description> The coding standard for the Online Store project</description>
+    <rule ref = "PSR2"/>
+    <file>app/</file>
+    <file>config/</file>
+    <file>database/</file>
+    <file>routes/</file>
+    <exclude-pattern>*/migration/*</exclude-pattern>
+</ruleset>

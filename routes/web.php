@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 
 //Route for the home index page (using the index method)
-Route::get("/","App\Http\Controllers\HomeController@index")->name('home.index');
+Route::get("/", "App\Http\Controllers\HomeController@index")->name('home.index');
 
 
 //Route for the home about page (using the about method );
-Route::get('/about','App\Http\Controllers\HomeController@about')->name('home.about');
+Route::get('/about', 'App\Http\Controllers\HomeController@about')->name('home.about');
+
+Route::get('/products','App\Http\Controllers\ProductController@index')->name('product.index');
+
+Route::get('/products/{id}','App\Http\Controllers\ProductController@show')->name('product.show');
 
