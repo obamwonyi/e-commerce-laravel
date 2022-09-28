@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 //Route for the home index page (using the index method)
 Route::get("/", "App\Http\Controllers\HomeController@index")->name('home.index');
 
-
-//Route for the home about page (using the about method );
 Route::get('/about', 'App\Http\Controllers\HomeController@about')->name('home.about');
 
 Route::get('/products','App\Http\Controllers\ProductController@index')->name('product.index');
@@ -30,3 +28,9 @@ Route::get('/admin','App\Http\Controllers\Admin\AdminHomeController@index')->nam
 Route::get('/admin/products','App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
 
 Route::post('/admin/products/store','App\Http\Controllers\Admin\AdminProductController@store')->name("admin.product.store");
+
+Route::delete("/admin/products/{id}/delete", "App\Http\Controllers\Admin\AdminProductController@delete")->name("admin.product.delete");
+
+Route::get("/admin/products/{id}/edit","App\Http\Controllers\Admin\AdminProductController@edit")->name("admin.product.edit");
+
+Route::put("/admin/products/{id}/update", "App\Http\Controllers\Admin\AdminProductController@update")->name("admin.product.update");
