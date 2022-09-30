@@ -28,6 +28,11 @@ Route::get('/cart','App\Http\Controllers\CartController@index')->name("cart.inde
 Route::get("/cart/delete","App\Http\Controllers\CartController@delete")->name("cart.delete");
 Route::post("/cart/add/{id}", "App\Http\Controllers\CartController@add")->name("cart.add");
 
+Route::middleware("auth")->group(function()
+{
+    Route::get("/cart/purchase", "App\Http\Controllers\CartController@purchase")->name("cart.purchase");
+});
+
 Route::middleware('admin')->group(function() 
 {
     Route::get('/admin','App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
@@ -41,6 +46,8 @@ Route::middleware('admin')->group(function()
     Route::get("/admin/products/{id}/edit","App\Http\Controllers\Admin\AdminProductController@edit")->name("admin.product.edit");
 
     Route::put("/admin/products/{id}/update", "App\Http\Controllers\Admin\AdminProductController@update")->name("admin.product.update");
+
+
 });
 
 
